@@ -26,7 +26,7 @@ export const StarshipsDetails: React.FC = observer(() => {
 
   return (
     <div>
-      <div className="starship-container">
+      <div className="starship-details-container">
         <h2>{name}</h2>
         <br />
         <p>Brand</p>
