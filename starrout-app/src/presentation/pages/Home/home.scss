@@ -1,0 +1,17 @@
+@import '../../styles/colors.scss';
+
+.home-container {
+  color: $yellow;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  grid-template-rows: 2fr 1fr 2fr;
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

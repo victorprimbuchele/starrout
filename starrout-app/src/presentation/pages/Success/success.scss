@@ -1,0 +1,43 @@
+@import '../../styles/colors.scss';
+
+.success-container {
+  margin-top: 3rem;
+  text-align: center;
+  color: $yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+    line-height: 1.2em;
+  }
+  .content {
+    margin-top: 3rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    .delivery-container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      color: $blue;
+      height: 60vh;
+      width: 25vw;
+      background-image: linear-gradient(#bbb, #fff);
+      background-repeat: no-repeat;
+      border: none;
+      border-radius: 1rem;
+    }
+
+    .space {
+      width: 5rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../../styles/colors.scss';
+
+.payment-form-container {
+  color: $yellow;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+
+  grid-template-rows: repeat(3, [row-start] 1fr [row-end]);
+  grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+
+  .credit-card-container {
+    font-family: Roboto;
+    font-size: 1.2rem;
+    grid-column: col-start 2 / col-end 3;
+    grid-row: row-start 3 / row-end 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .image-border {
+      padding: 1.5rem;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $blue-dark;
+
+        border: 0.25rem solid $yellow-dark;
+        border-radius: 1rem;
+      }
+    }
+
+    .credit-card-image {
+      transition: all 0.8s;
+      &:hover {
+        transform: scale(1.025);
+        filter: brightness(0.9);
+        cursor: pointer;
+      }
+    }
+    p {
+      margin-top: 0.8rem;
+    }
+  }
+
+  .boleto-container {
+    grid-column: col-start 1 / col-end 2;
+    grid-row: row-start 3 / row-end 3;
+  }
+}

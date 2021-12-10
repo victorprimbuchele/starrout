@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+
+.starship-container {
+  display: flex;
+  flex-direction: column;
+  color: $blue;
+  height: 60vh;
+  width: 25vw;
+  background-image: linear-gradient(#bbb, #fff);
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 1rem;
+}

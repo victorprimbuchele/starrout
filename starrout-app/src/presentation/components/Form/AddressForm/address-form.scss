@@ -1,0 +1,68 @@
+@import '../../../styles/colors.scss';
+
+.address-container {
+  margin-top: 3rem;
+  color: $yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  font-family: 'Roboto';
+  font-size: 1.08rem;
+  font-weight: 200;
+
+  .form_control_group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    label {
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select {
+      padding: 0.5rem;
+      width: 40vw;
+      border: #fff;
+      border-radius: 0.4rem;
+
+      &:focus {
+        outline-color: $blue;
+      }
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+    display: flex;
+
+    background-color: $yellow-dark;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.5s;
+    margin-top: 2rem;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(1.15);
+    }
+
+    &:disabled {
+      background-color: $disabledBackground;
+      color: $disabledText;
+
+      &:hover {
+        transform: scale(1);
+        filter: brightness(1);
+      }
+    }
+  }
+}

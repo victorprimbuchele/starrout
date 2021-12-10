@@ -1,0 +1,31 @@
+@import '../../styles/colors.scss';
+
+.button-container {
+  button {
+    display: flex;
+
+    background-color: $yellow-dark;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.5s;
+    margin-top: 1rem;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(1.15);
+    }
+
+    &:disabled {
+      background-color: $disabledBackground;
+      color: $disabledText;
+
+      &:hover {
+        transform: scale(1);
+        filter: brightness(1);
+      }
+    }
+  }
+}
