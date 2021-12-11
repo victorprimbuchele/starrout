@@ -1,15 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { observer } from 'mobx-react-lite'
-import { Link } from 'react-router-dom'
-import ReactTooltip from 'react-tooltip'
 
-import StarshipStore from '../../contexts/stores/StarshipStore'
 import './starship-details.scss'
 
 export const StarshipsDetails: React.FC = observer(() => {
-  const starshipStore = new StarshipStore()
-  const [starshipList, setStarshipList] = useState([])
-
   const name = localStorage.getItem('starship_name')
   const MGLT = localStorage.getItem('starship_MGLT')
   const cargo_capacity = localStorage.getItem('starship_cargo_capacity')

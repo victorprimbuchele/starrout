@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
 
 import counterStore from '../../contexts/stores/CounterStore'
-import { swapiAPI } from '../../../infra/services/SWAPI/serviceSWAPI'
 import startshipList from './starshipList'
+import StarshipStore from '../../contexts/stores/StarshipStore'
 import './starshiplist.scss'
 
-export const StarshipsList: React.FC = observer(({ starshipStore }: any) => {
+import Loader from '../../components/Loader/Loader'
+
+export const StarshipsList: React.FC = observer(() => {
+  const starshipStore = new StarshipStore()
+  const [isLoading, setIsLoading] = useState(false)
   const [starships, setStarships] = useState([])
-  const [chosenStarship, setChosenStarship] = useState('')
 
   function handleChoose(event: any, starship: any): any {
     console.log(starship)
@@ -46,12 +49,13 @@ export const StarshipsList: React.FC = observer(({ starshipStore }: any) => {
     const init = async () => {
       return new Promise(async (resolve, reject) => {
         try {
+          setIsLoading(true)
           localStorage.clear()
 
-          const response = await swapiAPI.get(`?page=${counterStore.count}`)
-          console.log(response.data.results)
+          const response: any = await starshipStore.getAll()
 
-          setStarships(response.data.results)
+          setStarships(response)
+          setIsLoading(false)
 
           return resolve(response.data.results)
         } catch (error) {
@@ -65,41 +69,45 @@ export const StarshipsList: React.FC = observer(({ starshipStore }: any) => {
   return (
     <div>
       <div className="starship-container">
-        {starships.map((starship: any, index: number) => {
-          return (
-            <div>
-              <Link
-                to="/form"
-                onClick={(event) => {
-                  handleChoose(event, {
-                    name: starship.name,
-                    MGLT: starship.MGLT,
-                    capacity: starship.cargo_capacity,
-                    consumables: starship.consumables,
-                    cost_in_credits: starship.cost_in_credits,
-                    length: starship.length,
-                    manufacturer: starship.manufacturer,
-                    speed: starship.max_atmosphering_speed,
-                    passengers: starship.passengers,
-                    class: starship.starship_class,
-                    url: starship.url,
-                  })
-                }}
-              >
-                <div className="starship" data-tip data-for={starship.name}>
-                  <p>{starship.name}</p>
-                </div>
-              </Link>
-              <ReactTooltip id={starship.name} place="right" effect="solid">
-                <div className="image-container">
-                  <div className="image">
-                    <img src={startshipList[starship.name]} alt="" />
+        {isLoading ? (
+          <Loader isLoading={isLoading} />
+        ) : (
+          starships.map((starship: any, index: number) => {
+            return (
+              <div>
+                <Link
+                  to="/form"
+                  onClick={(event) => {
+                    handleChoose(event, {
+                      name: starship.name,
+                      MGLT: starship.MGLT,
+                      capacity: starship.cargo_capacity,
+                      consumables: starship.consumables,
+                      cost_in_credits: starship.cost_in_credits,
+                      length: starship.length,
+                      manufacturer: starship.manufacturer,
+                      speed: starship.max_atmosphering_speed,
+                      passengers: starship.passengers,
+                      class: starship.starship_class,
+                      url: starship.url,
+                    })
+                  }}
+                >
+                  <div className="starship" data-tip data-for={starship.name}>
+                    <p>{starship.name}</p>
                   </div>
-                </div>
-              </ReactTooltip>
-            </div>
-          )
-        })}
+                </Link>
+                <ReactTooltip id={starship.name} place="right" effect="solid">
+                  <div className="image-container">
+                    <div className="image">
+                      <img src={startshipList[starship.name]} alt="" />
+                    </div>
+                  </div>
+                </ReactTooltip>
+              </div>
+            )
+          })
+        )}
       </div>
     </div>
   )
