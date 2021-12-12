@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik'
+import React, { useEffect, useState } from 'react'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { useNavigate } from 'react-router-dom'
 
 import documentValidation from '../../../protocols/documentValidation'
 import personalSchema from '../../../protocols/yup/personalSchema'
 import CNPJInput from '../../../micro-components/Inputs/CNPJnput'
-
-import './personal-form.scss'
 import CPFInput from '../../../micro-components/Inputs/CPFInput'
-import { useNavigate } from 'react-router-dom'
+import './personal-form.scss'
+import GoBack from '../../../micro-components/GoBack/GoBack'
+
+
 
 const PersonalForm = () => {
   const [active, setActive] = useState<String>('cpf')
@@ -84,8 +86,11 @@ const PersonalForm = () => {
   }, [validCnpj, cnpj, validCpf, cpf])
 
   return (
+    <>
+    
+      <GoBack navigate={navigate}/>
     <div className="personal-form-container">
-      <h2>Informações Pessoais</h2>
+      <h2>Personal Information</h2>
       <Formik
         validationSchema={personalSchema}
         initialValues={{ name: '', email: '', phone: '' }}
@@ -145,10 +150,13 @@ const PersonalForm = () => {
             {active === 'cpf' ? (
               <>
                 <CPFInput value={cpf} onChange={handleCpf} />
+                {!validCpf ? <span>your cpf number is invalid</span> : null}
               </>
             ) : (
               <>
                 <CNPJInput value={cnpj} onChange={handleCnpj} />
+                {!validCnpj ? <span>your cnpj number is invalid</span> : null}
+
               </>
             )}
 
@@ -163,6 +171,7 @@ const PersonalForm = () => {
         )}
       </Formik>
     </div>
+    </>
   )
 }
 

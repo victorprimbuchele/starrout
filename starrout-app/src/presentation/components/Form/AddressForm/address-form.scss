@@ -1,7 +1,11 @@
 @import '../../../styles/colors.scss';
 
+.container {
+  height: 100%;
+  margin-bottom: 1rem;
+}
+
 .address-container {
-  margin-top: 3rem;
   color: $yellow;
   display: flex;
   flex-direction: column;
@@ -40,7 +44,6 @@
   button {
     margin-top: 1rem;
     display: flex;
-
     background-color: $yellow-dark;
     color: white;
     font-size: 1.25rem;

@@ -7,6 +7,7 @@ import './payment-form.scss'
 import { useNavigate } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+import GoBack from '../../../micro-components/GoBack/GoBack'
 
 const PaymentForm = () => {
   const navigate = useNavigate()
@@ -20,23 +21,28 @@ const PaymentForm = () => {
   }
 
   return (
-    <div className="payment-form-container">
-      <div className="credit-card-container">
-        <div className="image-border">
-          <div className="credit-card-image">
-            <FontAwesomeIcon
-              icon={faCreditCard}
-              onClick={handleCreditCard}
-              size="6x"
-            />
+    <div className="container">
+     <GoBack navigate={navigate}/>
+      <div className="payment-form-container">
+        <div className="credit-card-container">
+          <div className="image-border">
+            <div className="credit-card-image">
+              <FontAwesomeIcon
+                icon={faCreditCard}
+                onClick={handleCreditCard}
+                size="6x"
+              />
+            </div>
           </div>
+          <p>Credit Card</p>
         </div>
-        <p>Credit Card</p>
-      </div>
-      <div className="boleto-container">
-        <Boleto onClick={handleBoleto} />
+        <div className="boleto-container">
+          <Boleto onClick={handleBoleto} />
+        </div>
       </div>
     </div>
+     
+    
   )
 }
 

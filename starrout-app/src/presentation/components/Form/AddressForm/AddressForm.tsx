@@ -6,6 +6,7 @@ import personalSchema from '../../../protocols/yup/addressSchema'
 import getACep from '../../../../infra/services/ViaCep/GetACep'
 import { ViaCepApiResponse } from '../../../../protocols/types/ViaCepApiResponse'
 import './address-form.scss'
+import GoBack from '../../../micro-components/GoBack/GoBack'
 
 const AddressForm = () => {
   let navigate = useNavigate()
@@ -31,8 +32,10 @@ const AddressForm = () => {
   }
 
   return (
+    <div className="container">
+ <GoBack navigate={navigate}/>
     <div className="address-container">
-      <h1>Address Information</h1>
+      <h2>Address Information</h2>
       <Formik
         validationSchema={personalSchema}
         initialValues={{
@@ -122,6 +125,10 @@ const AddressForm = () => {
         )}
       </Formik>
     </div>
+
+    </div>
+    
+         
   )
 }
 

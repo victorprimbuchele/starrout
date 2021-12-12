@@ -8,11 +8,11 @@
   align-items: center;
 
   .image-border {
-    padding: 1.5rem;
+    padding: 1.2rem;
     transition: all 0.5s;
 
     &:hover {
-      background-color: $blue-dark;
+      background-color: transparent;
 
       border: 0.25rem solid $yellow-dark;
       border-radius: 1rem;
@@ -28,6 +28,7 @@
     }
   }
   p {
+    font-size: 1.2rem;
     margin-top: 0.6rem;
   }
 }

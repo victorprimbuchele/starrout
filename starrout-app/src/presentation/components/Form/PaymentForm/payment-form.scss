@@ -2,20 +2,15 @@
 
 .payment-form-container {
   color: $yellow;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-  height: 100vh;
-
-  grid-template-rows: repeat(3, [row-start] 1fr [row-end]);
-  grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+  height: 100%;
 
   .credit-card-container {
     font-family: Roboto;
     font-size: 1.2rem;
-    grid-column: col-start 2 / col-end 3;
-    grid-row: row-start 3 / row-end 3;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -27,7 +22,7 @@
       transition: all 0.5s;
 
       &:hover {
-        background-color: $blue-dark;
+        background-color: transparent;
 
         border: 0.25rem solid $yellow-dark;
         border-radius: 1rem;
