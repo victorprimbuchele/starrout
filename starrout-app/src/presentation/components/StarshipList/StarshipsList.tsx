@@ -53,12 +53,13 @@ export const StarshipsList: React.FC = observer(() => {
           localStorage.clear()
 
           const response: any = await starshipStore.getAll()
-
+          console.log(response)
           setStarships(response)
           setIsLoading(false)
 
           return resolve(response.data.results)
         } catch (error) {
+          console.log(error)
           return reject(error)
         }
       })
