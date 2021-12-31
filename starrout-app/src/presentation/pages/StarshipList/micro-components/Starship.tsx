@@ -29,20 +29,6 @@ export const StarshipsList: React.FC = observer(() => {
     const starship_class: string = starship.starship_class
     const url: string = starship.url
 
-    localStorage.setItem('starship_name', name)
-    localStorage.setItem('starship_MGLT', MGLT)
-    localStorage.setItem('starship_cargo_capacity', cargo_capacity)
-    localStorage.setItem('starship_consumables', consumables)
-    localStorage.setItem('starship_cost_in_credits', cost_in_credits)
-    localStorage.setItem('starship_length', length)
-    localStorage.setItem('starship_manufacturer', manufacturer)
-    localStorage.setItem(
-      'starship_max_atmosphering_speed',
-      max_atmosphering_speed
-    )
-    localStorage.setItem('starship_passengers', passengers)
-    localStorage.setItem('starship_starship_class', starship_class)
-    localStorage.setItem('starship_url', url)
   }
 
   useEffect(() => {

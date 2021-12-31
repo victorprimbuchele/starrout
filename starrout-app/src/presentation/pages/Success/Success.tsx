@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './success.scss'
-import { StarshipsDetails } from '../../components/StarshipDetails.tsx/StarshipDetails'
+import { StarshipsDetails } from '../../components/StarshipDetails/StarshipDetails'
 
 const Success = () => {
   const clientName = localStorage.getItem('personal_form_name')

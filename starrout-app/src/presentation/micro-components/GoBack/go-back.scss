@@ -1,20 +1,29 @@
+@import '../../styles/colors.scss';
+
 .go-back-container {
-    display: grid;
+  width: 100%;
+  display: flex;
 
-    .grid-template-areas {
-        margin-top: 1.25rem;
-        margin-left: 1.75rem;
-        grid-template-areas: "goback logo div";
+  .grid-template-areas {
+    margin-top: 1.25rem;
+    margin-left: 1.75rem;
+    grid-template-areas: 'goback logo div';
 
-
-        .logo {
-            grid-area: logo;
-        }
-
-        .icon {
-            margin: 0.5rem;
-            grid-area: goback;
-        }
+    .logo {
+      grid-area: logo;
     }
 
+    .icon {
+      margin: 0.5rem;
+      grid-area: goback;
+
+      .fa-arrow-left {
+        transition: color 0.5s;
+      }
+
+      .fa-arrow-left:hover {
+        color: $yellow;
+      }
+    }
+  }
 }

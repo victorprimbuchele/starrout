@@ -1,4 +1,3 @@
-import { validateCNPJ, validateCPF } from 'validations-br'
 import * as Yup from 'yup'
 
 //  nome, e-mail, telefone e cpf/cnpj;
