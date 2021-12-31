@@ -1,9 +1,19 @@
 @import '../../../styles/colors.scss';
 
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items:center;
+  align-content: center;
+  width: 80%;
+}
+
 .container {
   height: 100%;
   margin-bottom: 1rem;
 }
+
 
 .address-container {
   color: $yellow;
@@ -12,34 +22,42 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  height: 100%;
   font-family: 'Roboto';
   font-size: 1.08rem;
   font-weight: 200;
-
-  .form_control_group {
-    margin-top: 1rem;
+  
+  form {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
-
-    label {
-      margin-bottom: 0.3rem;
-    }
-
-    input,
-    select {
-      padding: 0.5rem;
-      width: 40vw;
-      border: #fff;
-      border-radius: 0.4rem;
-
-      &:focus {
-        outline-color: $blue;
+    align-items:center;
+    justify-content: flex-start;
+    align-content: center;
+    .form_control_group {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+  
+      label {
+        margin-bottom: 0.3rem;
+      }
+  
+      input,
+      select {
+        padding: 0.5rem;
+        width: 40vw;
+        border: #fff;
+        border-radius: 0.4rem;
+  
+        &:focus {
+          outline-color: $blue;
+        }
       }
     }
   }
+  
 
   button {
     margin-top: 1rem;

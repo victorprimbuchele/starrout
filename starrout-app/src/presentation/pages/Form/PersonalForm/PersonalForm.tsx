@@ -8,6 +8,7 @@ import CNPJInput from '../../../micro-components/Inputs/CNPJnput'
 import CPFInput from '../../../micro-components/Inputs/CPFInput'
 import './personal-form.scss'
 import GoBack from '../../../micro-components/GoBack/GoBack'
+import { StarshipDetails } from '../../../components/StarshipDetails/StarshipDetails'
 
 
 
@@ -86,9 +87,9 @@ const PersonalForm = () => {
   }, [validCnpj, cnpj, validCpf, cpf])
 
   return (
-    <>
-    
+    <div className="container">
       <GoBack navigate={navigate}/>
+      <div className="content">
     <div className="personal-form-container">
       <h2>Personal Information</h2>
       <Formik
@@ -171,7 +172,11 @@ const PersonalForm = () => {
         )}
       </Formik>
     </div>
-    </>
+    <div className="starship-details">
+        <StarshipDetails />
+      </div>
+      </div>
+    </div>
   )
 }
 

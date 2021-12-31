@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './success.scss'
-import { StarshipsDetails } from '../../components/StarshipDetails/StarshipDetails'
+import { StarshipDetails } from '../../components/StarshipDetails/StarshipDetails'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouseUser } from '@fortawesome/free-solid-svg-icons'
 
 const Success = () => {
   const clientName = localStorage.getItem('personal_form_name')
@@ -19,7 +21,18 @@ const Success = () => {
 
   return (
     <div className="success-container">
-      <Link to="/">Home</Link>
+      <Link to="/" onClick={() => {localStorage.clear()}}>
+        <div className="to-home-container">
+        <div className="icon-home">
+        <FontAwesomeIcon icon={faHouseUser}/>
+
+        </div>
+        <p>
+          Home
+          </p>
+
+        </div>
+        </Link>
       <div className="congrats">
         <h1>Congratulations,</h1>
         <h1> {clientName}</h1>
@@ -55,7 +68,7 @@ const Success = () => {
         </div>
         <div className="space"></div>
         <div className="starships">
-          <StarshipsDetails />
+          <StarshipDetails />
         </div>
         <div className="personal"></div>
       </div>

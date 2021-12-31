@@ -7,6 +7,8 @@ import IStarshipProps from '../../../protocols/types/Starship'
 import startshipList from './import/starshipList'
 import './starshiplist.scss'
 
+localStorage.clear()
+
 const StarshipList: React.FC = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const { error, loading, starships, hasMore } = useStarshipHook(pageNumber)

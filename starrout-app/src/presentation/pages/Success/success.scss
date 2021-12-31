@@ -1,7 +1,45 @@
 @import '../../styles/colors.scss';
 
 .success-container {
-  margin-top: 3rem;
+  a {
+    margin-left: 1.2rem;
+    align-self: flex-start;
+    text-decoration: none;
+  } 
+  
+  .to-home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.5s;
+   
+    &:hover {
+      transform: scale(1.2);
+    }
+    
+    .icon-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: -webkit-linear-gradient(#fff, #888);
+      color: #fff;
+      height: 1.9rem;
+      width: 1.9rem;
+      border: none; 
+      border-radius: 50%;
+    }
+
+    p {
+      margin-left: 0.5rem;
+      font-size: 1.3rem;
+      background: -webkit-linear-gradient(#eee, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  margin-top: 1.75rem;
   text-align: center;
   color: $yellow;
   display: flex;

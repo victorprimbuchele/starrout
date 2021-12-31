@@ -7,6 +7,7 @@ import getACep from '../../../../infra/services/ViaCep/GetACep'
 import { ViaCepApiResponse } from '../../../../protocols/types/ViaCepApiResponse'
 import './address-form.scss'
 import GoBack from '../../../micro-components/GoBack/GoBack'
+import { StarshipDetails } from '../../../components/StarshipDetails/StarshipDetails'
 
 const AddressForm = () => {
   let navigate = useNavigate()
@@ -34,7 +35,10 @@ const AddressForm = () => {
   return (
     <div className="container">
  <GoBack navigate={navigate}/>
-    <div className="address-container">
+
+    <div className="content">
+     
+      <div className="address-container">
       <h2>Address Information</h2>
       <Formik
         validationSchema={personalSchema}
@@ -125,7 +129,10 @@ const AddressForm = () => {
         )}
       </Formik>
     </div>
-
+    <div className="starship-details">
+        <StarshipDetails />
+      </div>
+    </div>
     </div>
     
          

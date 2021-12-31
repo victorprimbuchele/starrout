@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './starship-details.scss'
 
-export const StarshipsDetails: React.FC = () => {
+export const StarshipDetails: React.FC = () => {
   const name = localStorage.getItem('starship_name')
   const MGLT = localStorage.getItem('starship_MGLT')
   const cargo_capacity = localStorage.getItem('starship_cargo_capacity')
