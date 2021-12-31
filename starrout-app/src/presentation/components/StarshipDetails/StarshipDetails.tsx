@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { observer } from 'mobx-react-lite'
 
 import './starship-details.scss'
 
-export const StarshipsDetails: React.FC = observer(() => {
+export const StarshipsDetails: React.FC = () => {
   const name = localStorage.getItem('starship_name')
   const MGLT = localStorage.getItem('starship_MGLT')
   const cargo_capacity = localStorage.getItem('starship_cargo_capacity')
@@ -50,4 +49,4 @@ export const StarshipsDetails: React.FC = observer(() => {
       </div>
     </div>
   )
-})
+}

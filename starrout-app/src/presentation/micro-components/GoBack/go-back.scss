@@ -16,6 +16,7 @@
     .icon {
       margin: 0.5rem;
       grid-area: goback;
+      cursor: pointer;
 
       .fa-arrow-left {
         transition: color 0.5s;

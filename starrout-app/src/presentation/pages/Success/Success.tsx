@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './success.scss'
 import { StarshipsDetails } from '../../components/StarshipDetails/StarshipDetails'
@@ -18,6 +19,7 @@ const Success = () => {
 
   return (
     <div className="success-container">
+      <Link to="/">Home</Link>
       <div className="congrats">
         <h1>Congratulations,</h1>
         <h1> {clientName}</h1>
